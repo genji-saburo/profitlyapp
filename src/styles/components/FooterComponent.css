@@ -1,0 +1,86 @@
+.footer{
+	padding: 50px 0 0 0;
+	position: relative;
+}
+.footer:after{
+	content: "";
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 175px;
+	height: 174px;
+	padding: 50px 0 0 0;
+	background: url("../images/footer-dots-right.png") no-repeat center;
+	background-size: 100% 100%;
+}
+.footer:before{
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 90px;
+	width: 193px;
+	height: 254px;
+	padding: 50px 0 0 0;
+	background: url("../images/footer-dots-left.png") no-repeat center;
+	transform: rotate(-360deg);
+	background-size: 100% 100%;
+}
+
+.footer-widget{
+	float: left;
+	width: 20%;
+	padding: 0 15px;
+	margin: 0 0 120px 0;
+}
+.footer-widget:first-child{
+	width: 28%;
+}
+.footer-widget:nth-child(2),
+.footer-widget:nth-child(3){
+	width: 16%;
+}
+.footer-widget h4{
+	font-size: 18px;
+}
+.footer-widget ul li,
+.footer-widget ul li a{
+	color: #ac98ff;
+	font-family: 'Colfax-Regular';
+	font-weight: 400;
+	text-decoration: none;
+}
+.footer-widget ul li a:hover{
+	color: #fff;
+}
+.footer-widget ul li img{
+	width: 150px;
+}
+.footer-logo{
+	margin-bottom: 0.5rem;
+}
+.footer-logo img{
+	width: 150px;
+}
+.copyright {
+	padding: 20px 0;
+	background-color: #0015ae;
+}
+.copyright p{
+	color: #ac98ff;
+	font-family: 'Colfax-Regular';
+}
+.footer-links {
+	float: right;
+}
+.footer-links li {
+	float: left;
+	margin: 0 0 0 20px;
+}
+.footer-links li a{
+	color: #ac98ff;
+	text-decoration: none;
+	font-family: 'Colfax-Regular';
+}
+.footer-links li a:hover{
+	color: #fff;
+}

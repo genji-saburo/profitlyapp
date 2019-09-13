@@ -1,0 +1,22 @@
+.footer-inner{
+	padding: 15px 0;
+	background-color: #fafafa;
+}
+.footer-inner .footer-links{
+	float: left;
+	margin: 2px 0 0 0;
+}
+.footer-inner .footer-links li{
+	margin: 0 10px;
+}
+.footer-inner .footer-links.right{
+	float: right;
+}
+.footer-inner .footer-links li a{
+	font-family: 'Avenir-Heavy';
+	font-size: 18px;
+	color: #d1d1d1;
+}
+.footer-inner .footer-links li a:hover{
+	color: #000;
+}
