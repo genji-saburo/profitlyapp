@@ -155,3 +155,37 @@
 .epacket img{
 	width: 75px;
 }
+.btn-filert {
+	color: #b6bcc3 !important;
+	font-size: 20px !important;
+	font-family: 'Avenir-Heavy';
+	padding: 10px 25px !important;
+	background-color: #edf1f5 !important;
+	border:1px solid #e3eaf0 !important;
+	margin: 0 0 15px 0;
+}
+.btn-filert:hover{
+	background-color: #e9f1f9 !important;
+}
+.btn-filert img {
+	position: relative;
+	top: -2px;
+	left: 0;
+	margin: 0 10px 0 0;
+}
+.product-box.lockover .top-option-wrp{
+	display: none;
+}
+.lockover:after{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.956;
+	background-color: #fff;
+	background-image: url("../images/lock-over.png");
+	background-position: center center;
+	background-repeat: no-repeat
+}

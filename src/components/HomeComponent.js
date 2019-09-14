@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Button } from 'reactstrap';
 
 import '../styles/components/home.css';
 import '../styles/index.css';
@@ -15,6 +15,8 @@ import iconstags from "../styles/images/icon-tags.png";
 import iconrating from "../styles/images/icon-rating.png";
 import icongrantee from "../styles/images/icon-guarantee.png";
 import epacket from "../styles/images/epack.png";
+import iconClear from "../styles/images/icon-clear.png";
+import iconSort from "../styles/images/icon-sort.png";
 
 class HomeComponent extends Component {
   render() {
@@ -41,6 +43,19 @@ class HomeComponent extends Component {
             </Container>
         </div>
         <div className="content-area products">
+            <Container>
+              <Row>
+                <Col xl={4} lg={4} md={4} xs={12} sm={4}>
+                  <Button className="btn-filert"><img src={iconClear} alt="" />Clear Filters</Button>
+                </Col>
+                <Col xl={4} lg={4} md={4} xs={12} sm={4} className="text-center">
+                  <Button className="btn-filert">Results (1,234 Found)</Button>
+                </Col>
+                <Col xl={4} lg={4} md={4} xs={12} sm={4}>
+                  <Button className="btn-filert float-right"><img src={iconSort} alt="" />Sort By</Button>
+                </Col>
+              </Row>
+            </Container>
             <Container fluid={true}>
               <Row>
                 <Col xl={3} lg={4} md={6} xs={12} sm={6}>
@@ -214,7 +229,7 @@ class HomeComponent extends Component {
                   </div>
                 </Col>
                 <Col xl={3} lg={4} md={6} xs={12} sm={6}>
-                  <div className="product-box">
+                  <div className="product-box lockover">
                     <div className="top-option-wrp">
                       <div className="count-tag">1</div>
                       <ul>
@@ -248,7 +263,7 @@ class HomeComponent extends Component {
                   </div>
                 </Col>
                 <Col xl={3} lg={4} md={6} xs={12} sm={6}>
-                  <div className="product-box">
+                  <div className="product-box lockover">
                     <div className="top-option-wrp">
                       <div className="count-tag">1</div>
                       <ul>
@@ -282,7 +297,7 @@ class HomeComponent extends Component {
                   </div>
                 </Col>
                 <Col xl={3} lg={4} md={6} xs={12} sm={6}>
-                  <div className="product-box">
+                  <div className="product-box lockover">
                     <div className="top-option-wrp">
                       <div className="count-tag">1</div>
                       <ul>

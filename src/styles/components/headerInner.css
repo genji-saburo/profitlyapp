@@ -1,5 +1,104 @@
 .header-inner{
-	padding: 15px 0;
 	background-color: #0017b3;
 	border-bottom: 1px solid #122297;
+}
+.header-search{
+	padding: 20px 0;
+}
+.header-search .form-control,
+.header-search .form-control:focus{
+	font-family: 'Avenir-Roman';
+	font-size: 25px;
+	background-color: transparent;
+	border: none;
+	color: #5f72ff;
+	padding: 0 0 0 30px;
+	height: 40px !important;
+}
+.header-search .form-control{
+	background: url("../images/icon-search.png") no-repeat left;
+}
+.header-search .form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+	color: #5f72ff;
+	opacity: 1; /* Firefox */
+}
+.header-search .form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	color: #5f72ff;
+}
+.header-search .form-control::-ms-input-placeholder { /* Microsoft Edge */
+	color: #5f72ff;
+}
+.top-logo{
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.top-logo img{
+	width: 150px;
+}
+.navigation {
+	display: flex;
+	width: 100%;
+	justify-content: end;
+	align-items: center;
+	height: 100%;
+}
+.profile-img {
+	width: 35px;
+	height: 35px;
+	display: inline-block;
+	border: 2px solid #5f72ff;
+	border-radius: 100%;
+	margin: 0 20px 0 0px;
+}
+.navigation ul li{
+	margin: 0 0 0 30px;
+	padding: 20px 0;
+}
+.navigation .nav-link{
+	padding: 0 !important;
+	position: relative;
+	color: #5f72ff !important;
+	overflow: hidden;
+}
+.navigation .nav-link.home{
+	width: 36px;
+	height: 36px;
+	text-indent: -999px;
+	background: url("../images/icon-home.png") no-repeat left;
+	background-position: -39px 0;
+}
+.navigation .nav-link.home:hover{
+	background-position: 0 0;
+}
+.navigation .nav-link.like{
+	width: 36px;
+	height: 36px;
+	text-indent: -999px;
+	background: url("../images/icon-like-menu.png") no-repeat left;
+	background-position: -39px 3px;
+}
+.navigation .nav-link.like:hover{
+	background-position: 0 3px;
+}
+.navigation .nav-link.dashboard{
+	width: 36px;
+	height: 36px;
+	text-indent: -999px;
+	background: url("../images/icon-dashboard.png") no-repeat left;
+	background-position: -39px 0;
+}
+.navigation .nav-link.dashboard:hover{
+	background-position: 0 0;
+}
+
+.navigation .dropdown-toggle:after{
+	top: 50%;
+	right: 5px;
+	transform: translateY(-50%);
+	position: absolute;
+}
+.navigation .navbar{
+	padding: 0;
 }

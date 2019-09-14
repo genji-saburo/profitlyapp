@@ -1,15 +1,32 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'reactstrap';
+import Modal from 'react-responsive-modal';
 
 import HeaderComponent from '../components/HeaderComponent';
 import FooterComponent from '../components/FooterComponent';
 
-import '../styles/homePageLayout.css';
+import macBook from "../styles/images/mac-book.png";
+import shopyfyLogo from "../styles/images/shopify.png";
+
+import '../styles/components/landingPage.css';
 import '../styles/index.css';
 
-class HomePageLayout extends Component {
+class LandingComponent extends Component {
+  state = {
+    open: false,
+  };
+
+  onOpenModal = () => {
+    this.setState({ open: true });
+  };
+
+  onCloseModal = () => {
+    this.setState({ open: false });
+  };
+
   render() {
+    const { open } = this.state;
     return (
     <Fragment>
       <HeaderComponent />
@@ -19,24 +36,12 @@ class HomePageLayout extends Component {
             <Container>
               <Row>
                 <Col xl="12">
-                  <div className="partners-logo text-center">
-                    <a href=""><img src="images/amazon.png" alt="" /></a>
-                    <a href=""><img src="images/aliexpress.png" alt="" /></a>
-                    <a href=""><img src="images/gearbest.png" alt="" /></a>
-                    <a href=""><img src="images/wish.png" alt="" /></a>
-                    <a href=""><img src="images/esty.png" alt="" /></a>
-                    <a href=""><img src="images/ebay.png" alt="" /></a>
-                    <a href=""><img src="images/rakuten.png" alt="" /></a>
+                  <div className="shopify mb-3 text-center">
+                    <img className="img-fluid" src={shopyfyLogo} alt="" />
                   </div>
-                </Col>
-              </Row>
-              <Row>
-                <Col xl="12">
-                  <div className="landing-heading">
-                    <h1 className="text-white text-center mb-2 colfax-bold">Make more sales by selling <br /> the best products.</h1>
-                  </div>
-                  <div className="reviews mb-5 text-center">
-                    <img src="images/reviews.png" alt="" />                
+                  <div className="landing-heading mb-4 text-center">
+                    <h1 className="text-white colfax-bold">Find the Best <br /> Products to Sell Online.</h1>
+                    <h2>View a list of the world’s 1,000 best-selling products, and <br /> instantly import them into your Shopify store.</h2>
                   </div>
                 </Col>
               </Row>
@@ -62,7 +67,15 @@ class HomePageLayout extends Component {
                 <div className="content-screen">
                   <Row className="justify-content-center">
                     <Col xl="8">
-                      <img className="img-fluid" src="images/mac-book.png" alt="" />
+                      <div className="video-box">
+                        <img className="img-fluid" src={macBook} alt="" />
+                        <div className="video-play-btn" onClick={this.onOpenModal}></div>                        
+                        <Modal open={open} onClose={this.onCloseModal} center>
+                          <div className="mxz embed-responsive embed-responsive-16by9">
+                            <iframe className="embed-responsive-item" src="https://www.youtube.com/embed/vlDzYIIOYmM"></iframe>
+                          </div>
+                        </Modal>
+                      </div>
                     </Col>
                   </Row>
                 </div>
@@ -97,4 +110,4 @@ class HomePageLayout extends Component {
   }
 }
 
-export default HomePageLayout;
+export default LandingComponent;
