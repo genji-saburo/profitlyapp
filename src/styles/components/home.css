@@ -276,7 +276,7 @@
 	justify-content: center;
 }
 .product-detail .count-box{
-	margin: 0 0 25px 0;
+	margin: 0 0 15px 0;
 }
 .product-detail .count-box span {
 	font-size: 30px;
@@ -348,4 +348,7 @@
 .bottom-options .choose-plan.add {
 	width: 13.3333%;
 	border-left: 1px solid #d3d3d3;
+}
+.rating-star .stars{
+	display: inline-block;
 }

@@ -68,16 +68,24 @@ class HeaderInnerComponent extends Component {
 													<span className="profile-img"></span>
 												</DropdownToggle>
 												<DropdownMenu right>
-												<DropdownItem>
-													Profile
-												</DropdownItem>
-												<DropdownItem>
-													Settings
-												</DropdownItem>
-												<DropdownItem divider />
-												<DropdownItem>
-													Logout
-												</DropdownItem>
+													<NavItem>
+														<NavLink href="">About Profitly</NavLink>
+													</NavItem>
+													<NavItem>
+														<NavLink href="">Press</NavLink>
+													</NavItem>
+													<NavItem>
+														<NavLink href="">Affiliates</NavLink>
+													</NavItem>
+													<NavItem>
+														<NavLink href="">Pricing</NavLink>
+													</NavItem>
+													<NavItem>
+														<NavLink href="">My Account</NavLink>
+													</NavItem>
+													<NavItem>
+														<NavLink href="/login">Logout</NavLink>
+													</NavItem>
 												</DropdownMenu>
 											</UncontrolledDropdown>
 											</Nav>

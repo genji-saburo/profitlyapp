@@ -77,6 +77,14 @@ class HomeComponent extends Component {
                     <a href=""><img src="images/rakuten.png" alt="" /></a>
                   </div>
                   <h1 className="heading-main colfax-bold">The world’s best-selling products, ranked from 1-1000.</h1>
+                  <div className="rating-star text-center">
+                    <ReactStars className="stars" 
+                      count={5}
+                      value={5}
+                      size={30}
+                      color2={'#ffcc48'}
+                    />
+                  </div>
                 </Col>
               </Row>
             </Container>
@@ -387,11 +395,11 @@ class HomeComponent extends Component {
                         <div className="count-box">
                           <span>1</span>
                         </div>
-                        <div className="rating-star">
+                        <div className="rating-star mb-2">
                           <ReactStars 
                             count={5} 
                             value={4}
-                            size={24} 
+                            size={30} 
                             color2={'#ffcc48'} 
                           />
                         </div>
