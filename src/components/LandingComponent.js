@@ -71,8 +71,8 @@ class LandingComponent extends Component {
                         <img className="img-fluid" src={macBook} alt="" />
                         <div className="video-play-btn" onClick={this.onOpenModal}></div>                        
                         <Modal open={open} onClose={this.onCloseModal} center>
-                          <div className="mxz embed-responsive embed-responsive-16by9">
-                            <iframe className="embed-responsive-item" src="https://www.youtube.com/embed/vlDzYIIOYmM"></iframe>
+                          <div className="embed-responsive embed-responsive-16by9">
+                            <iframe title="Demo Video" className="embed-responsive-item" src="https://www.youtube.com/embed/vlDzYIIOYmM"></iframe>
                           </div>
                         </Modal>
                       </div>

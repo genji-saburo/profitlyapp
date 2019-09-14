@@ -1,5 +1,10 @@
 import React, { Component, Fragment } from 'react';
-import { Container, Row, Col, Button } from 'reactstrap';
+import { Link } from 'react-router-dom';
+import { 
+  Container, Row, Col, Button,
+  Modal, ModalBody, ModalFooter
+} from 'reactstrap';
+import ReactStars from 'react-stars'
 
 import '../styles/components/home.css';
 import '../styles/index.css';
@@ -17,8 +22,42 @@ import icongrantee from "../styles/images/icon-guarantee.png";
 import epacket from "../styles/images/epack.png";
 import iconClear from "../styles/images/icon-clear.png";
 import iconSort from "../styles/images/icon-sort.png";
+import slideProducts from "../styles/images/img-products.png";
+import iconDownloadGray from "../styles/images/icon-download-gray.png";
+import iconLikeGray from "../styles/images/icon-like-gray.png";
+import iconPlusGray from "../styles/images/icon-plus-gray.png";
 
 class HomeComponent extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      unLockProductsModal: false,
+      missingLinksModal: false,
+      productPreviewModal: false
+    };
+
+    this.unLockProductsModal = this.unLockProductsModal.bind(this);
+    this.missingLinksModal = this.missingLinksModal.bind(this);
+    this.productPreviewModal = this.productPreviewModal.bind(this)
+  }
+
+  unLockProductsModal() {
+    this.setState(prevState => ({
+      unLockProductsModal: !prevState.unLockProductsModal
+    }));
+  }
+  missingLinksModal() {
+    this.setState(prevState => ({
+      missingLinksModal: !prevState.missingLinksModal
+    }));
+  }
+
+  productPreviewModal() {
+    this.setState(prevState => ({
+      productPreviewModal: !prevState.productPreviewModal
+    }));
+  }
+
   render() {
     return (
     <Fragment>
@@ -59,7 +98,7 @@ class HomeComponent extends Component {
             <Container fluid={true}>
               <Row>
                 <Col xl={3} lg={4} md={6} xs={12} sm={6}>
-                  <div className="product-box">
+                  <div className="product-box" onClick={this.productPreviewModal}>
                     <div className="top-option-wrp">
                       <div className="count-tag">1</div>
                       <ul>
@@ -263,7 +302,7 @@ class HomeComponent extends Component {
                   </div>
                 </Col>
                 <Col xl={3} lg={4} md={6} xs={12} sm={6}>
-                  <div className="product-box lockover">
+                  <div className="product-box lockover" onClick={this.missingLinksModal}>
                     <div className="top-option-wrp">
                       <div className="count-tag">1</div>
                       <ul>
@@ -297,7 +336,7 @@ class HomeComponent extends Component {
                   </div>
                 </Col>
                 <Col xl={3} lg={4} md={6} xs={12} sm={6}>
-                  <div className="product-box lockover">
+                  <div className="product-box lockover" onClick={this.unLockProductsModal}>
                     <div className="top-option-wrp">
                       <div className="count-tag">1</div>
                       <ul>
@@ -332,6 +371,100 @@ class HomeComponent extends Component {
                 </Col>
               </Row>
             </Container>
+            <Modal className="products-modal product-preview-modal modal-dialog-centered modal-lg" isOpen={this.state.productPreviewModal} toggle={this.productPreviewModal}>
+              <Button type="button" className="close" onClick={this.productPreviewModal}><span aria-hidden="true">×</span></Button>
+              <ModalBody className="pl-5 pr-5">
+                <Row>
+                  <Col xl={6} lg={6} md={6} xs={12} sm={6}>
+                    <div className="preview-thumbnail text-center">
+                      <figure>
+                        <img className="img-fluid" src={productimg} alt="" />
+                      </figure>
+                    </div>
+                  </Col>
+                  <Col xl={6} lg={6} md={6} xs={12} sm={6}>
+                    <div className="product-detail text-center">
+                        <div className="count-box">
+                          <span>1</span>
+                        </div>
+                        <div className="rating-star">
+                          <ReactStars 
+                            count={5} 
+                            value={4}
+                            size={24} 
+                            color2={'#ffcc48'} 
+                          />
+                        </div>
+                        <h3 className="prod-title">Insta Evo 360º Camera</h3>
+                        <div className="btn-badge">
+                          <span>Electronics</span>
+                        </div>
+                        <div className="detail-bottom">
+                          <div className="price-tags">
+                            <span className="old">$399</span>
+                            <span className="new">$399</span>
+                          </div>
+                          <div className="product-action-btn">
+                            <Link className="btn btn-danger" to="#">ePacket</Link>
+                          </div>
+                        </div>
+                    </div>
+                  </Col>
+                </Row>
+              </ModalBody>
+              <ModalFooter className="p-0 text-center">
+                <div className="bottom-options">
+                  <Link className="choose-plan" to="#">View On AliExpress</Link>
+                  <Link className="choose-plan download" to="#"><img src={iconDownloadGray} alt="" /></Link>
+                  <Link className="choose-plan like" to="#"><img src={iconLikeGray} alt="" /></Link>
+                  <Link className="choose-plan add" to="#"><img src={iconPlusGray} alt="" /></Link>
+                </div>
+              </ModalFooter>
+            </Modal>
+            {/* Unlock Products Modal */}
+            <Modal className="products-modal modal-dialog-centered" isOpen={this.state.unLockProductsModal} toggle={this.unLockProductsModal}>
+              <Button type="button" className="close" onClick={this.unLockProductsModal}><span aria-hidden="true">×</span></Button>
+              <ModalBody className="p-0 text-center">
+                <div className="modal-top-area">
+                  <div className="btn-badge">
+                    <span>Upgrade Your Plan</span>
+                  </div>
+                  <h2>This product is only available on the premium plan.</h2>
+                  <img className="img-fluid" src={slideProducts} alt="" />                    
+                </div>
+                <div className="modal-middle-area">
+                  <div className="btn-badge">
+                    <span>Profitly Premium</span>
+                  </div>
+                  <h2>Unlock All Products</h2>
+                  <h5>Get unlimited access to all products and <br />suppliers by choosing a plan.</h5>
+                </div>
+              </ModalBody>
+              <ModalFooter className="p-0 text-center">
+                <Link className="choose-plan" to="#">Choose a Plan</Link>
+              </ModalFooter>
+            </Modal>
+            {/* Missing Links Modal */}
+            <Modal className="products-modal modal-dialog-centered" isOpen={this.state.missingLinksModal} toggle={this.missingLinksModal}>
+              <Button type="button" className="close" onClick={this.missingLinksModal}><span aria-hidden="true">×</span></Button>
+              <ModalBody className="p-0 text-center">
+                <div className="modal-middle-area">
+                  <div className="btn-badge">
+                    <span>Report a Missing Link</span>
+                  </div>
+                  <h2>Is there a missing link?</h2>
+                  <h5>
+                    Due to the speed at which suppliers<br /> 
+                    update product listings, links may <br />
+                    sometimes dissappear. Please<br /> 
+                    report the link below:
+                  </h5>
+                </div>
+              </ModalBody>
+              <ModalFooter className="p-0 text-center">
+                <Link className="choose-plan" to="#">Report Missing Link</Link>
+              </ModalFooter>
+            </Modal>
         </div>
       </div>
       <FooterInnerComponent />

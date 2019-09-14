@@ -173,6 +173,9 @@
 	left: 0;
 	margin: 0 10px 0 0;
 }
+.product-box.lockover{
+	cursor: pointer;
+}
 .product-box.lockover .top-option-wrp{
 	display: none;
 }
@@ -188,4 +191,161 @@
 	background-image: url("../images/lock-over.png");
 	background-position: center center;
 	background-repeat: no-repeat
+}
+.products-modal .modal-content{
+	border-radius: 15px;
+	border: none;
+}
+.modal-top-area {
+	background-color: #0015bf;
+	border-radius: 15px 15px 0 0;
+	padding: 8% 8% 0 8%;
+}
+.modal-top-area h2 {
+	font-size: 26px;
+	color: #fff;
+	font-family: 'Colfax-Bold';
+}
+.modal-top-area .btn-badge{
+	margin: 0 0 20px 0;
+}
+.modal-top-area .btn-badge span {
+	font-size: 20px;
+	color: #fff;
+	background-color: #1731ff;
+}
+.modal-middle-area{
+	padding: 6% 8%;
+}
+.modal-middle-area h2 {
+	font-size: 38px;
+	font-family: 'Avenir-Black';
+}
+.modal-middle-area h5{
+	color: #707070;
+	font-size: 22px;
+}
+.choose-plan {
+	display: block;
+	float: left;
+	width: 100%;
+	padding: 8px;
+	color: #cbcaca;
+	font-size: 34px;
+	outline: none;
+	border-radius: 0 0 15px 15px;
+	font-family: 'Avenir-Black';
+	background-color: #ececec;
+}
+.choose-plan:hover{
+	text-decoration: none;
+}
+.btn-badge{
+	margin: 0 0 15px 0;
+}
+.btn-badge span {
+	display: inline-block;
+	padding: 8px 15px;
+	color: #3147ff;
+	font-size: 22px;
+	line-height: 31px;
+	background-color: #cdddff;
+	border-radius: 10px;
+	font-family: 'Avenir-Black';
+}
+.btn.close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 9;
+	color: #fff !important;
+}
+.btn.close:hover,
+.btn.close:focus,
+.btn.close:active{
+	background-color: transparent !important;
+}
+.product-preview-modal .btn.close{
+	color: #3147ff !important;
+}
+.product-detail {
+	display: flex;
+	height: 100%;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+}
+.product-detail .count-box{
+	margin: 0 0 25px 0;
+}
+.product-detail .count-box span {
+	font-size: 30px;
+	color: #c3c3c3;
+	padding: 6px 15px;
+	width: 50px;
+	height: 50px;
+	line-height: 42px;
+	display: inline-block;
+	text-align: center;
+	border-radius: 12px;
+	background-color: #f2f2f2;
+	font-family: 'Avenir-Black';
+}
+.product-detail .btn-badge span {
+	font-size: 18px;
+	color: #c3c3c3;
+	padding: 6px 15px;
+	border-radius: 80px;
+	background-color: #f2f2f2;
+	font-family: 'Colfax-Regular';
+	line-height: inherit !important;
+}
+.product-detail .prod-title{
+	font-size: 30px;
+	font-family: 'Avenir-Black';
+}
+.detail-bottom {
+	width: 100%;
+	margin: 20px 0 0 0;
+}
+.price-tags {
+	font-size: 26px;
+	margin: 0 0 15px 0;
+	font-family: 'Avenir-Black';
+}
+.price-tags span{
+	margin: 0 5px;
+}
+.price-tags span.old{
+	color: #d0d0d0;
+	text-decoration: line-through;
+}
+.product-action-btn .btn {
+	padding: 0.375rem 2rem !important;
+	line-height: 21px;
+	border-radius: 50px !important;
+	background-color: #ed2e33;
+}
+.bottom-options {
+	float: left;
+	width: 100%;
+	background-color: #ececec;
+	border-radius: 0 0 15px 15px;
+}
+.bottom-options .choose-plan {
+	width: 60%;
+	border-radius: 0;
+	background-color: transparent;
+}
+.bottom-options .choose-plan.download {
+	width: 13.3333%;
+	border-left: 1px solid #d3d3d3;
+}
+.bottom-options .choose-plan.like {
+	width: 13.3333%;
+	border-left: 1px solid #d3d3d3;
+}
+.bottom-options .choose-plan.add {
+	width: 13.3333%;
+	border-left: 1px solid #d3d3d3;
 }
