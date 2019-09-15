@@ -352,3 +352,66 @@
 .rating-star .stars{
 	display: inline-block;
 }
+.product-filters {
+	float: left;
+	width: 100%;
+	margin-top: -90px;
+	margin-bottom: 30px;
+	border-radius: 6px;
+	background-color: #fff;
+	border: 1px solid #e3eaf0;
+}
+.filter-box {
+	float: left;
+	width: 20%;
+	padding: 20px;
+	position: relative;
+	height: 96px;
+	border-right: 1px solid #e3eaf0;
+}
+.filter-box .filter-label{
+	font-size: 22px;
+	color: #4f4f4f;
+	margin: 0;
+	font-family: 'Avenir-Heavy';
+}
+.filter-output {
+	color: #c8c8c8;
+	font-size: 18px;
+	font-family: 'Avenir-Heavy';
+}
+.filter-box:last-child{
+	border-right: none;
+}
+.drop-element {
+	left: 0;
+	top: 100%;
+	z-index: 9;
+	width: 100%;
+	padding: 8px 20px;
+	display: block;
+	margin: 1px 0 0 0;
+	position: absolute;
+	background-color: #fff;
+	border-radius: 0 0 5px 5px;
+	height: 60px;
+}
+.filter-box:hover .drop-element {
+	display: block;
+}
+.input-range__label--value{
+	display: none;
+}
+.input-range__track{
+	height: 12px !important;
+}
+.input-range__track--active{
+	background: #c6c6c6 !important;
+}
+.input-range__slider{
+	height: 24px !important;
+	margin-top: -18px !important;
+	width: 24px !important;
+	background: #c6c6c6 !important;
+	border:3px solid #fff !important;
+}
