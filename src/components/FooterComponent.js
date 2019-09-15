@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Container, Row, Col } from 'reactstrap';
+import ReactStars from 'react-stars';
 import '../styles/components/FooterComponent.css';
 import '../styles/index.css';
 
@@ -50,12 +51,18 @@ class FooterComponent extends Component {
 								</ul>
 							</div>
 							<div className="footer-widget">
+								<div className="rating-star">
+									<div className="rating-with-count">
+									<ReactStars className="stars" 
+										count={5}
+										value={5}
+										size={30}
+										color2={'#ffcc48'}
+									/>
+									<span className="rating-count">4.9</span>
+									</div>
+								</div>
 								<ul>
-									<li>
-										<div className="reviews">
-											<img src="images/reviews.png" alt="" />                
-										</div>
-									</li>
 									<li>
 										Find the best products to sell online with Profitly.
 									</li>
@@ -65,7 +72,6 @@ class FooterComponent extends Component {
 										<a href="" className="btn btn-block btn-white avenir-black">Affiliates</a>
 									</Col>
 								</Row>
-								
 							</div>
 						</Row>
 					</Container>

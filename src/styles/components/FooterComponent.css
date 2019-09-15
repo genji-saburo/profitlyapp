@@ -55,6 +55,9 @@
 .footer-widget ul li img{
 	width: 150px;
 }
+.footer-widget .rating-star{
+	margin-top: -16px;
+}
 .footer-logo{
 	margin-bottom: 0.5rem;
 }

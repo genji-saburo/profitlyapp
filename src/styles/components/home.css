@@ -352,6 +352,20 @@
 .rating-star .stars{
 	display: inline-block;
 }
+.rating-with-count {
+	display: inline-block;
+	position: relative;
+	padding: 0 34px 0 0;
+	color: #ffcc48;
+}
+.rating-count {
+	position: absolute;
+	right: 0;
+	top: 50%;
+	font-size: 22px;
+	transform: translateY(-50%);
+	font-family: 'Colfax-Medium';
+}
 .product-filters {
 	float: left;
 	width: 100%;
@@ -390,11 +404,14 @@
 	width: 100%;
 	padding: 8px 20px;
 	display: none;
-	margin: 1px 0 0 0;
 	position: absolute;
 	background-color: #fff;
 	border-radius: 0 0 5px 5px;
 	height: 60px;
+	border-top: 1px solid #e3eaf0;
+}
+.filter-box.epacket {
+	text-align: center;
 }
 .filter-box:hover .drop-element {
 	display: block;

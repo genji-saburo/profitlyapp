@@ -12,6 +12,7 @@ import {
 } from 'reactstrap';
 import ReactStars from 'react-stars';
 import InputRange from 'react-input-range';
+import Switch from "react-switch";
 
 import '../styles/components/home.css';
 import '../styles/index.css';
@@ -44,12 +45,18 @@ class HomeComponent extends Component {
       price_range: {
         min: 5,
         max: 10,
-      }
+      },
+      checked: false
     };
 
     this.unLockProductsModal = this.unLockProductsModal.bind(this);
     this.missingLinksModal = this.missingLinksModal.bind(this);
-    this.productPreviewModal = this.productPreviewModal.bind(this)
+    this.productPreviewModal = this.productPreviewModal.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(checked) {
+    this.setState({ checked });
   }
 
   unLockProductsModal() {
@@ -89,12 +96,15 @@ class HomeComponent extends Component {
                   </div>
                   <h1 className="heading-main colfax-bold mb-0">The world’s best-selling products, ranked from 1-1000.</h1>
                   <div className="rating-star text-center">
-                    <ReactStars className="stars" 
-                      count={5}
-                      value={5}
-                      size={30}
-                      color2={'#ffcc48'}
-                    />
+                    <div className="rating-with-count">
+                      <ReactStars className="stars" 
+                        count={5}
+                        value={5}
+                        size={30}
+                        color2={'#ffcc48'}
+                      />
+                      <span className="rating-count">4.9</span>
+                    </div>
                   </div>
                 </Col>
               </Row>
@@ -154,6 +164,23 @@ class HomeComponent extends Component {
                   </div>
                   <div className="filter-box epacket">
                     <label className="filter-label">ePacket Only</label>
+                    <div className="switch-wrp text-center">
+                      <Switch
+                        checked={this.state.checked}
+                        onChange={this.handleChange}
+                        offColor="#95e597"
+                        onColor="#95e597"
+                        offHandleColor="#3ec441"
+                        onHandleColor="#3ec441"                        
+                        handleDiameter={30}
+                        uncheckedIcon={false}
+                        checkedIcon={false}
+                        height={20}
+                        width={48}
+                        className="react-switch"
+                        id="epacket-switch"
+                      />
+                    </div>
                   </div>
                 </div>
               </Col>
@@ -464,13 +491,16 @@ class HomeComponent extends Component {
                       <div className="count-box">
                         <span>1</span>
                       </div>
-                      <div className="rating-star mb-2">
-                        <ReactStars 
-                          count={5} 
-                          value={4}
-                          size={30} 
-                          color2={'#ffcc48'} 
-                        />
+                      <div className="rating-star text-center">
+                        <div className="rating-with-count">
+                          <ReactStars className="stars" 
+                            count={5}
+                            value={5}
+                            size={30}
+                            color2={'#ffcc48'}
+                          />
+                          <span className="rating-count">4.9</span>
+                        </div>
                       </div>
                       <h3 className="prod-title">Insta Evo 360º Camera</h3>
                       <div className="btn-badge">
