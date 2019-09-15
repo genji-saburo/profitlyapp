@@ -37,7 +37,8 @@
 	width: 160px;
 }
 .auth-link p{
-	line-height: 22px;
+	font-size: 16px;
+	line-height: 18px;
 }
 .separator {
 	width: 100px;

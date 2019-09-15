@@ -352,3 +352,96 @@
 .rating-star .stars{
 	display: inline-block;
 }
+.rating-with-count {
+	display: inline-block;
+	position: relative;
+	padding: 0 34px 0 0;
+	color: #ffcc48;
+}
+.rating-count {
+	position: absolute;
+	right: 0;
+	top: 50%;
+	font-size: 22px;
+	transform: translateY(-50%);
+	font-family: 'Colfax-Medium';
+}
+.product-filters {
+	float: left;
+	width: 100%;
+	margin-top: -90px;
+	margin-bottom: 30px;
+	border-radius: 6px;
+	background-color: #fff;
+	border: 1px solid #e3eaf0;
+}
+.filter-box {
+	float: left;
+	width: 20%;
+	padding: 20px;
+	position: relative;
+	height: 96px;
+	border-right: 1px solid #e3eaf0;
+}
+.filter-box .filter-label{
+	font-size: 22px;
+	color: #4f4f4f;
+	margin: 0;
+	font-family: 'Avenir-Heavy';
+}
+.filter-output {
+	color: #c8c8c8;
+	font-size: 18px;
+	font-family: 'Avenir-Heavy';
+}
+.filter-box:last-child{
+	border-right: none;
+}
+.drop-element {
+	left: 0;
+	top: 100%;
+	z-index: 9;
+	width: 100%;
+	padding: 8px 20px;
+	display: none;
+	position: absolute;
+	background-color: #fff;
+	border-radius: 0 0 5px 5px;
+	height: 60px;
+	border-top: 1px solid #e3eaf0;
+}
+.filter-box.epacket {
+	text-align: center;
+}
+.filter-box:hover .drop-element {
+	display: block;
+}
+.filter-box .input-range__label--value{
+	display: none;
+}
+.filter-box .input-range__label{
+	font-family: 'Colfax-Medium';
+}
+.filter-box .input-range__track{
+	height: 12px;
+}
+.filter-box .input-range__track--active{
+	background: #c6c6c6;
+}
+.filter-box .input-range__slider{
+	height: 24px;
+	margin-top: -18px;
+	width: 24px;
+	background: #c6c6c6;
+	border:3px solid #fff;
+}
+.filter-box .form-control-transparent,
+.filter-box .form-control-transparent:focus{
+	color: #c8c8c8;
+	font-size: 18px;
+	border:none;
+	height: auto !important;
+	padding: 0 1.75rem 0 0;
+	font-family: 'Avenir-Heavy';
+	background-color: transparent;
+}

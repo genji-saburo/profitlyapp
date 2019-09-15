@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'reactstrap';
+import ReactStars from 'react-stars';
 
 import '../styles/components/authComponent.css';
 
@@ -47,7 +48,17 @@ class SignUpComponent extends Component {
 										<h1 className="text-white text-center mb-2 colfax-bold">“The best products, from the best <br /> sites, all in one app.”</h1>
 									</div>
 									<div className="reviews mb-4 text-center">
-										<img src="images/reviews.png" alt="" />                
+										<div className="rating-star">
+											<div className="rating-with-count">
+												<ReactStars className="stars" 
+													count={5}
+													value={5}
+													size={30}
+													color2={'#ffcc48'}
+												/>
+												<span className="rating-count">4.9</span>
+											</div>
+										</div>
 									</div>
 									<Row className="justify-content-center">
 										<Col xl="3" md="3" lg="3" xs="12" sm="3">
