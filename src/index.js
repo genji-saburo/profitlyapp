@@ -10,6 +10,8 @@ import App from './App';
 import './styles/base/variables.css';
 import './styles/index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-input-range/lib/css/index.css';
+
 
 ReactDOM.render(
 	<Provider store={store}>

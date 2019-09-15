@@ -8,8 +8,7 @@ import { Container, Row, Col, Form, Input,
   NavLink,
   UncontrolledDropdown,
   DropdownToggle,
-  DropdownMenu,
-  DropdownItem 
+  DropdownMenu
 } from 'reactstrap';
 
 import '../styles/components/headerInner.css';
