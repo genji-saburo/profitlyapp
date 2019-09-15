@@ -389,7 +389,7 @@
 	z-index: 9;
 	width: 100%;
 	padding: 8px 20px;
-	display: block;
+	display: none;
 	margin: 1px 0 0 0;
 	position: absolute;
 	background-color: #fff;
@@ -399,19 +399,32 @@
 .filter-box:hover .drop-element {
 	display: block;
 }
-.input-range__label--value{
+.filter-box .input-range__label--value{
 	display: none;
 }
-.input-range__track{
-	height: 12px !important;
+.filter-box .input-range__label{
+	font-family: 'Colfax-Medium';
 }
-.input-range__track--active{
-	background: #c6c6c6 !important;
+.filter-box .input-range__track{
+	height: 12px;
 }
-.input-range__slider{
-	height: 24px !important;
-	margin-top: -18px !important;
-	width: 24px !important;
-	background: #c6c6c6 !important;
-	border:3px solid #fff !important;
+.filter-box .input-range__track--active{
+	background: #c6c6c6;
+}
+.filter-box .input-range__slider{
+	height: 24px;
+	margin-top: -18px;
+	width: 24px;
+	background: #c6c6c6;
+	border:3px solid #fff;
+}
+.filter-box .form-control-transparent,
+.filter-box .form-control-transparent:focus{
+	color: #c8c8c8;
+	font-size: 18px;
+	border:none;
+	height: auto !important;
+	padding: 0 1.75rem 0 0;
+	font-family: 'Avenir-Heavy';
+	background-color: transparent;
 }

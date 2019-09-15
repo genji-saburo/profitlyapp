@@ -1,8 +1,14 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { 
-  Container, Row, Col, Button,
-  Modal, ModalBody, ModalFooter
+  Container, 
+  Row, 
+  Col, 
+  Button,
+  Modal, 
+  ModalBody, 
+  ModalFooter,
+  Input
 } from 'reactstrap';
 import ReactStars from 'react-stars';
 import InputRange from 'react-input-range';
@@ -81,7 +87,7 @@ class HomeComponent extends Component {
                     <a href=""><img src="images/ebay.png" alt="" /></a>
                     <a href=""><img src="images/rakuten.png" alt="" /></a>
                   </div>
-                  <h1 className="heading-main colfax-bold">The world’s best-selling products, ranked from 1-1000.</h1>
+                  <h1 className="heading-main colfax-bold mb-0">The world’s best-selling products, ranked from 1-1000.</h1>
                   <div className="rating-star text-center">
                     <ReactStars className="stars" 
                       count={5}
@@ -101,9 +107,24 @@ class HomeComponent extends Component {
                 <div className="product-filters">
                   <div className="filter-box product-type">
                     <label className="filter-label">Product List</label>
+                    <Input className="custom-select form-control-transparent" type="select" name="select">
+                      <option>Top 1,000</option>
+                      <option>Dropship</option>
+                    </Input>
                   </div>
                   <div className="filter-box categories">
                     <label className="filter-label">Category</label>
+                    <Input className="custom-select form-control-transparent" type="select" name="select">
+                      <option>Everything</option>
+                      <option>Electronics</option>
+                      <option>Women’s</option>
+                      <option>Men’s</option>
+                      <option>Sports & Outdoors</option>
+                      <option>Kids</option>
+                      <option>Home & Garden</option>
+                      <option>Photography</option>
+                      <option>Music</option>
+                    </Input>
                   </div>
                   <div className="filter-box price-range">
                     <label className="filter-label">Price Range</label>
