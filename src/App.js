@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import HomePage from'./layouts/HomePageLayout';
+import LandingPage from'./components/LandingComponent';
 import SignUpComponent from './components/SignUpComponent';
 import SignUpWithComponent from './components/SignUpWithComponent';
 import FormSignUpComponent from './components/FormSignUpComponent';
@@ -19,7 +19,7 @@ class App extends Component {
       <Fragment>
         <Router>
           <Fragment>
-            <Route path="/" component={HomePage} exact />
+            <Route path="/" component={LandingPage} exact />
             <Route path="/sign_up" component={SignUpComponent} />
             <Route path="/sign_up_with" component={SignUpWithComponent} />
             <Route path="/form_sign_up" component={FormSignUpComponent} />
