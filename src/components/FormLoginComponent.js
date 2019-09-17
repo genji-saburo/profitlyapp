@@ -67,9 +67,15 @@ class FormSignUpComponent extends Component {
 														<Button className="btn btn-block btn-green avenir-black">Login</Button>
 													</Col>
 												</Row>
+												<Row className="justify-content-center">
+													<Col xl="10" md="10" lg="10" xs="12" sm="10">
+														<div className="auth-link mt-3 text-center">
+															<Link className="auth-link-text" to="/">Forgot your password?</Link>
+														</div>
+													</Col>
+												</Row>
 											</Col>											
-										</Row>
-										
+										</Row>										
 									</Form>
 								</Col>
 								<Col xl="6" lg="6" md="6" xs="12" sm="6">

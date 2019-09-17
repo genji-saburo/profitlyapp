@@ -76,7 +76,7 @@ class SignUpWithComponent extends Component {
 										</Col>
 									</Row>
 									<Row className="justify-content-center">
-										<Col xl="9" md="9" lg="9" xs="12" sm="9">
+										<Col xl="10" md="10" lg="10" xs="12" sm="10">
 											<div className="auth-link mt-2 text-center">
 												<p>By continuing, you agree to Profitly’s Terms of Service and Privacy Policy, and to receiving marketing emails from Profitly.
 												</p>
