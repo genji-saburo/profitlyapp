@@ -11,6 +11,8 @@ import './styles/base/variables.css';
 import './styles/index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-input-range/lib/css/index.css';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 
 ReactDOM.render(

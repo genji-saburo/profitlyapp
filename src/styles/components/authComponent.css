@@ -5,8 +5,20 @@
 	-ms-flex-direction: column;
 	flex-direction: column;
 	min-height: 100%;
-	background: url("../images/bg-auth.png") no-repeat;
-	background-size: cover; 
+	background-color: #0016c2;
+	position: relative;
+}
+.auth-page-wrp:after{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 50%;
+	height: 100%;
+	width: 80px;
+	margin-left: -95px;
+	-webkit-box-shadow: 21px 1px 27px -14px rgba(0,20,170,1);
+	-moz-box-shadow: 21px 1px 27px -14px rgba(0,20,170,1);
+	box-shadow: 21px 1px 27px -14px rgba(0,20,170,1);
 }
 .center-content {
 	position: absolute;
@@ -28,7 +40,7 @@
 	padding: 15px 0;
 }
 .auth-page-logo img{
-	width: 100px;
+	width: 130px;
 }
 .auth-page-footer{
 	padding: 15px 0;
@@ -39,6 +51,7 @@
 .auth-link p{
 	font-size: 16px;
 	line-height: 18px;
+	margin: 0;
 }
 .separator {
 	width: 100px;
@@ -49,4 +62,14 @@
 }
 .form-wrp .form-group label{
 	color: #6d85ff;
+}
+.right-col-inner{
+	height: 100%;
+	position: relative;
+	margin: 70px 0 0 0;
+}
+.bottom-image{
+	position: absolute;
+	bottom: -15px;
+	width: 100%;
 }
