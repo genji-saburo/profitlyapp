@@ -1,0 +1,117 @@
+.payment-page-wrp {
+	display: -ms-flexbox;
+	display: flex;
+	flex: 1;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	min-height: 100%;
+	background-color: #0016c2;
+	position: relative;
+}
+.payment-page-wrp:before{
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 318px;
+	height: 320px;
+	background: url("../images/payment-prod1.png") no-repeat;
+}
+.payment-page-wrp:after{
+	content: "";
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 318px;
+	height: 320px;
+	background: url("../images/payment-prod2.png") no-repeat;
+}
+.main-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 80%;
+}
+.wrp-page-inner {
+	-ms-flex: 1 1;
+	flex: 1 1;
+	position: relative;
+	padding:15px;
+}
+.top-title h1{
+	color: #fff;
+	font-size: 60px;
+	font-family: 'Colfax-Bold';
+}
+.top-title p{
+	color: #fff;
+	font-size: 30px;
+	color: #8a9efe;
+	line-height: 35px;
+	font-family: 'Avenir-Light';
+}
+.payment-amount{
+	display: flex;
+	height: 100px;
+	align-items: center;
+	margin: 40px 0 0 0;
+	justify-content: center;
+}
+.payment-amount span{
+	font-size: 25px;
+	color: #fff;
+	font-family: 'Colfax-Bold';
+}
+.payment-amount .payment-value{
+	font-size: 140px;
+	margin: 0 5px;
+}
+.payment-period {
+	float: left;
+	width: 100%;
+	padding: 5%;
+	background-color: #0014b6;
+	margin: 20px 0;
+	border-radius: 20px;
+}
+.payment-period h5,
+.payment-period p{
+	color: #5b6fff;
+}
+.payment-period h5{
+	font-size: 23px;
+	margin: 0 0 2px 0;
+	font-family: 'Colfax-Bold';
+}
+.payment-period p{
+	margin: 0;
+}
+.payment-button{
+	float: left;
+	width: 100%;
+}
+.order-number {
+	display: inline-block;
+	padding: 10px 30px;
+	border: 1px solid #8095ff;
+	border-radius: 8px;
+	color: #fff;
+	font-size: 22px;
+	font-family: 'Avenir-Black';
+}
+.order-number span{
+	color: #8095ff;
+	font-family: 'Avenir-Medium';
+}
+.partners-logo img {
+	width: 114px;
+}
+.payment-page-footer {
+	padding: 15px 0;
+}
+.btn-page-close {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+}

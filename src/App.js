@@ -7,6 +7,9 @@ import SignUpWithComponent from './components/SignUpWithComponent';
 import FormSignUpComponent from './components/FormSignUpComponent';
 import FormLoginComponent from './components/FormLoginComponent';
 import HomeComponent from './components/HomeComponent';
+import Pay1Component from './components/Pay1Component';
+import Pay2Component from './components/Pay2Component';
+import Pay3Component from './components/Pay3Component';
 
 class App extends Component {
 
@@ -25,6 +28,9 @@ class App extends Component {
             <Route path="/form_sign_up" component={FormSignUpComponent} />
             <Route path="/login" component={FormLoginComponent} />
             <Route path="/home" component={HomeComponent} />
+            <Route path="/pay1" component={Pay1Component} />
+            <Route path="/pay2" component={Pay2Component} />
+            <Route path="/pay3" component={Pay3Component} />
           </Fragment>
         </Router>
       </Fragment>
