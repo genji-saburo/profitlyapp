@@ -17,7 +17,9 @@ import '../styles/index.css';
 
 import HeaderInnerComponent from "./HeaderInnerComponent";
 import FooterInnerComponent from "./FooterInnerComponent";
-import productimg1 from "../styles/images/products1.png";
+import product1 from "../styles/images/products1.png";
+import product2 from "../styles/images/product1.png";
+import product3 from "../styles/images/product.jpg";
 import addWhishList from "../styles/images/icon-plus-sm.png";
 import iconLike from "../styles/images/icon-like-gray-sm.png";
 import iconstags from "../styles/images/icon-tags.png";
@@ -222,7 +224,7 @@ class productListingComponent extends Component {
                       <span>1</span>
                     </div>
                     <div className="listing-box product-img">
-                      <figure><img className="img-fluid" src={productimg1} alt="" /></figure>
+                      <figure><img className="img-fluid" src={product1} alt="" /></figure>
                     </div>
                     <div className="listing-box product-info">
                       <Row className="align-items-center h-100">
@@ -268,7 +270,7 @@ class productListingComponent extends Component {
                       <span>2</span>
                     </div>
                     <div className="listing-box product-img">
-                      <figure><img className="img-fluid" src={productimg1} alt="" /></figure>
+                      <figure><img className="img-fluid" src={product2} alt="" /></figure>
                     </div>
                     <div className="listing-box product-info">
                       <Row className="align-items-center h-100">
@@ -317,7 +319,7 @@ class productListingComponent extends Component {
                       <span>3</span>
                     </div>
                     <div className="listing-box product-img">
-                      <figure><img className="img-fluid" src={productimg1} alt="" /></figure>
+                      <figure><img className="img-fluid" src={product3} alt="" /></figure>
                     </div>
                     <div className="listing-box product-info">
                       <Row className="align-items-center h-100">
@@ -366,7 +368,7 @@ class productListingComponent extends Component {
                       <span>4</span>
                     </div>
                     <div className="listing-box product-img">
-                      <figure><img className="img-fluid" src={productimg1} alt="" /></figure>
+                      <figure><img className="img-fluid" src={product2} alt="" /></figure>
                     </div>
                     <div className="listing-box product-info">
                       <Row className="align-items-center h-100">
@@ -412,7 +414,7 @@ class productListingComponent extends Component {
                       <span>5</span>
                     </div>
                     <div className="listing-box product-img">
-                      <figure><img className="img-fluid" src={productimg1} alt="" /></figure>
+                      <figure><img className="img-fluid" src={product3} alt="" /></figure>
                     </div>
                     <div className="listing-box product-info">
                       <Row className="align-items-center h-100">
@@ -458,7 +460,7 @@ class productListingComponent extends Component {
                       <span>6</span>
                     </div>
                     <div className="listing-box product-img">
-                      <figure><img className="img-fluid" src={productimg1} alt="" /></figure>
+                      <figure><img className="img-fluid" src={product1} alt="" /></figure>
                     </div>
                     <div className="listing-box product-info">
                       <Row className="align-items-center h-100">
@@ -507,7 +509,7 @@ class productListingComponent extends Component {
                       <span>7</span>
                     </div>
                     <div className="listing-box product-img">
-                      <figure><img className="img-fluid" src={productimg1} alt="" /></figure>
+                      <figure><img className="img-fluid" src={product2} alt="" /></figure>
                     </div>
                     <div className="listing-box product-info">
                       <Row className="align-items-center h-100">
@@ -556,7 +558,7 @@ class productListingComponent extends Component {
                       <div className="lock-overlay">
                         <img className="img-fluid" src={iconLockSm} alt="" />
                       </div>
-                      <figure><img className="img-fluid" src={productimg1} alt="" /></figure>
+                      <figure><img className="img-fluid" src={product1} alt="" /></figure>
                     </div>
                     <div className="listing-box product-info">
                       <div className="lock-overlay">
