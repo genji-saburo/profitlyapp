@@ -561,6 +561,9 @@
 .product-name h4 a:hover{
 	color: #3ec441;
 }
+.product-info .product-bottom{
+	padding: 0;
+}
 .product-name .time-tag {
 	display: inline-block;
 	padding: 2px 8px;

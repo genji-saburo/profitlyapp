@@ -323,7 +323,9 @@ class productListingComponent extends Component {
                       <Row className="align-items-center h-100">
                         <Col xl={8} lg={8} md={8} xs={12} sm={8}>
                           <div className="product-name">
-                            <h4 className="mb-0">360º Smart Toothbrush</h4>
+                            <h4 className="mb-0">
+                              <Link to="/">360º Smart Toothbrush</Link>
+                            </h4>
                             <div className="time-tag">2 Days Ago</div>
                           </div>
                           <div className="product-bottom">
@@ -370,7 +372,9 @@ class productListingComponent extends Component {
                       <Row className="align-items-center h-100">
                         <Col xl={8} lg={8} md={8} xs={12} sm={8}>
                           <div className="product-name">
-                            <h4 className="mb-0">Xiaomi Wifi Extender</h4>
+                            <h4 className="mb-0">
+                              <Link to="/">Xiaomi Wifi Extender</Link>
+                            </h4>
                             <div className="time-tag">2 Days Ago</div>
                           </div>
                           <div className="product-bottom">
@@ -414,7 +418,9 @@ class productListingComponent extends Component {
                       <Row className="align-items-center h-100">
                         <Col xl={8} lg={8} md={8} xs={12} sm={8}>
                           <div className="product-name">
-                            <h4 className="mb-0">Mens Black Watch</h4>
+                            <h4 className="mb-0">
+                              <Link to="/">Mens Black Watch</Link>
+                            </h4>
                             <div className="time-tag">2 Days Ago</div>
                           </div>
                           <div className="product-bottom">
@@ -458,7 +464,9 @@ class productListingComponent extends Component {
                       <Row className="align-items-center h-100">
                         <Col xl={8} lg={8} md={8} xs={12} sm={8}>
                           <div className="product-name">
-                            <h4 className="mb-0">Wireless Headphones</h4>
+                            <h4 className="mb-0">
+                              <Link to="/">Wireless Headphones</Link>
+                            </h4>
                             <div className="time-tag">2 Days Ago</div>
                           </div>
                           <div className="product-bottom">
@@ -505,7 +513,9 @@ class productListingComponent extends Component {
                       <Row className="align-items-center h-100">
                         <Col xl={8} lg={8} md={8} xs={12} sm={8}>
                           <div className="product-name">
-                            <h4 className="mb-0">Charging Dock</h4>
+                            <h4 className="mb-0">
+                              <Link to="/">Charging Dock</Link>
+                            </h4>
                             <div className="time-tag">2 Days Ago</div>
                           </div>
                           <div className="product-bottom">
@@ -555,7 +565,9 @@ class productListingComponent extends Component {
                       <Row className="align-items-center h-100">
                         <Col xl={8} lg={8} md={8} xs={12} sm={8}>
                           <div className="product-name">
-                            <h4 className="mb-0">Magnetic AirPod Straps</h4>
+                            <h4 className="mb-0">
+                              <Link to="/">Magnetic AirPod Straps</Link>
+                            </h4>
                             <div className="time-tag">2 Days Ago</div>
                           </div>
                           <div className="product-bottom">
