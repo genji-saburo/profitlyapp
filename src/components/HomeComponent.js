@@ -8,7 +8,8 @@ import {
   Modal, 
   ModalBody, 
   ModalFooter,
-  Input
+  Input,
+  Dropdown, DropdownMenu, DropdownToggle
 } from 'reactstrap';
 import ReactStars from 'react-stars';
 import InputRange from 'react-input-range';
@@ -22,12 +23,14 @@ import FooterInnerComponent from "../components/FooterInnerComponent";
 import productimg from "../styles/images/products.png";
 import productimg1 from "../styles/images/products1.png";
 import productimg2 from "../styles/images/products2.png";
-import addWhishList from "../styles/images/icon-wish-list.png";
-import iconLike from "../styles/images/icon-like.png";
+import addWhishList from "../styles/images/icon-plus-sm.png";
+import iconLike from "../styles/images/icon-like-gray-sm.png";
 import iconstags from "../styles/images/icon-tags.png";
 import iconrating from "../styles/images/icon-rating.png";
 import icongrantee from "../styles/images/icon-guarantee.png";
-import epacket from "../styles/images/epack.png";
+import iconEye from "../styles/images/icon-eye.png";
+import iconTimes from "../styles/images/icon-times.png";
+import iconEpack from "../styles/images/icon-epacket.png";
 import iconClear from "../styles/images/icon-clear.png";
 import iconSort from "../styles/images/icon-sort.png";
 import slideProducts from "../styles/images/img-products.png";
@@ -46,13 +49,17 @@ class HomeComponent extends Component {
         min: 5,
         max: 10,
       },
-      checked: false
+      checked: false,
+      sortBy: false,
+      viewType: false
     };
 
     this.unLockProductsModal = this.unLockProductsModal.bind(this);
     this.missingLinksModal = this.missingLinksModal.bind(this);
     this.productPreviewModal = this.productPreviewModal.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.sortByToggle = this.sortByToggle.bind(this);
+    this.viewTypeToggle = this.viewTypeToggle.bind(this);
   }
 
   handleChange(checked) {
@@ -76,6 +83,18 @@ class HomeComponent extends Component {
     }));
   }
 
+  sortByToggle() {
+    this.setState({
+      sortBy: !this.state.sortBy
+    });
+  }
+  viewTypeToggle() {
+    this.setState({
+      viewType: !this.state.viewType
+    });
+  }
+  
+
   render() {
     return (
     <Fragment>
@@ -94,7 +113,7 @@ class HomeComponent extends Component {
                     <a href=""><img src="images/ebay.png" alt="" /></a>
                     <a href=""><img src="images/rakuten.png" alt="" /></a>
                   </div>
-                  <h1 className="heading-main colfax-bold mb-0">The world’s best-selling products, ranked from 1-1000.</h1>
+                  <h1 className="heading-main colfax-bold mb-0">The World’s Top 1,000</h1>
                   <div className="rating-star text-center">
                     <div className="rating-with-count">
                       <ReactStars className="stars" 
@@ -194,8 +213,31 @@ class HomeComponent extends Component {
               <Col xl={4} lg={4} md={4} xs={12} sm={4} className="text-center">
                 <Button className="btn-filert">Results (1,234 Found)</Button>
               </Col>
-              <Col xl={4} lg={4} md={4} xs={12} sm={4}>
-                <Button className="btn-filert float-right"><img src={iconSort} alt="" />Sort By</Button>
+              <Col xl={2} lg={2} md={2} xs={12} sm={2}>
+                <Dropdown className="toggled-menu" isOpen={this.state.sortBy} size="lg" toggle={this.sortByToggle}>
+                  <DropdownToggle className="btn-filert btn-block float-right">
+                    <img src={iconSort} alt="" />View
+                  </DropdownToggle>
+                  <DropdownMenu className="dropdown-menu-right">
+                    <Link to="/product_listing">List</Link>
+                    <Link to="/home">Grid</Link>
+                  </DropdownMenu>
+                </Dropdown>
+              </Col>
+              <Col xl={2} lg={2} md={2} xs={12} sm={2}>
+                <Dropdown className="toggled-menu" isOpen={this.state.viewType} size="lg" toggle={this.viewTypeToggle}>
+                  <DropdownToggle className="btn-filert btn-block float-right">
+                    <img src={iconSort} alt="" />Sort By
+                  </DropdownToggle>
+                  <DropdownMenu className="dropdown-menu-right">
+                    <Link to="/home">Price: High to Low</Link>
+                    <Link to="/">Price: Low to High</Link>
+                    <Link to="/">Orders: High to Low</Link>
+                    <Link to="/">Orders: Low to High</Link>
+                    <Link to="/">Ranking: High to Low</Link>
+                    <Link to="/">Ranking: Low to High</Link>
+                  </DropdownMenu>
+                </Dropdown>
               </Col>
             </Row>
           </Container>
@@ -203,9 +245,10 @@ class HomeComponent extends Component {
             <Row>
               <Col xl={3} lg={4} md={6} xs={12} sm={6}>
                 <div className="product-box" onClick={this.productPreviewModal}>
+                  <div className="count-tag"><img src={iconTimes} alt="" /></div>
                   <div className="top-option-wrp">
-                    <div className="count-tag">1</div>
                     <ul>
+                      <li className="like"><img src={iconEye} alt="" /></li>
                       <li className="like"><img src={iconLike} alt="" /></li>
                       <li className="add-wsh-list"><img src={addWhishList} alt="" /></li>
                     </ul>
@@ -230,16 +273,19 @@ class HomeComponent extends Component {
                       <li>
                         <img src={icongrantee} alt="" /> <span>99%</span>
                       </li>
+                      <li>
+                        <img src={iconEpack} alt="" /> <span>ePack</span>
+                      </li>
                     </ul>
-                    <span className="epacket"><img src={epacket} alt="" /></span>
                   </div>
                 </div>
               </Col>
               <Col xl={3} lg={4} md={6} xs={12} sm={6}>
                 <div className="product-box">
+                  <div className="count-tag"><img src={iconTimes} alt="" /></div>
                   <div className="top-option-wrp">
-                    <div className="count-tag">1</div>
                     <ul>
+                      <li className="like"><img src={iconEye} alt="" /></li>
                       <li className="like"><img src={iconLike} alt="" /></li>
                       <li className="add-wsh-list"><img src={addWhishList} alt="" /></li>
                     </ul>
@@ -264,16 +310,18 @@ class HomeComponent extends Component {
                       <li>
                         <img src={icongrantee} alt="" /> <span>99%</span>
                       </li>
+                      <li>
+                        <img src={iconEpack} alt="" /> <span>ePack</span>
+                      </li>
                     </ul>
-                    <span className="epacket"><img src={epacket} alt="" /></span>
                   </div>
                 </div>
               </Col>
               <Col xl={3} lg={4} md={6} xs={12} sm={6}>
                 <div className="product-box">
                   <div className="top-option-wrp">
-                    <div className="count-tag">1</div>
                     <ul>
+                      <li className="like"><img src={iconEye} alt="" /></li>
                       <li className="like"><img src={iconLike} alt="" /></li>
                       <li className="add-wsh-list"><img src={addWhishList} alt="" /></li>
                     </ul>
@@ -298,16 +346,18 @@ class HomeComponent extends Component {
                       <li>
                         <img src={icongrantee} alt="" /> <span>99%</span>
                       </li>
+                      <li>
+                        <img src={iconEpack} alt="" /> <span>ePack</span>
+                      </li>
                     </ul>
-                    <span className="epacket"><img src={epacket} alt="" /></span>
                   </div>
                 </div>
               </Col>
               <Col xl={3} lg={4} md={6} xs={12} sm={6}>
                 <div className="product-box">
                   <div className="top-option-wrp">
-                    <div className="count-tag">1</div>
                     <ul>
+                      <li className="like"><img src={iconEye} alt="" /></li>
                       <li className="like"><img src={iconLike} alt="" /></li>
                       <li className="add-wsh-list"><img src={addWhishList} alt="" /></li>
                     </ul>
@@ -332,16 +382,19 @@ class HomeComponent extends Component {
                       <li>
                         <img src={icongrantee} alt="" /> <span>99%</span>
                       </li>
+                      <li>
+                        <img src={iconEpack} alt="" /> <span>ePack</span>
+                      </li>
                     </ul>
-                    <span className="epacket"><img src={epacket} alt="" /></span>
                   </div>
                 </div>
               </Col>
               <Col xl={3} lg={4} md={6} xs={12} sm={6}>
-                <div className="product-box">
+                <div className="product-box" onClick={this.productPreviewModal}>
+                  <div className="count-tag"><img src={iconTimes} alt="" /></div>
                   <div className="top-option-wrp">
-                    <div className="count-tag">1</div>
                     <ul>
+                      <li className="like"><img src={iconEye} alt="" /></li>
                       <li className="like"><img src={iconLike} alt="" /></li>
                       <li className="add-wsh-list"><img src={addWhishList} alt="" /></li>
                     </ul>
@@ -366,16 +419,163 @@ class HomeComponent extends Component {
                       <li>
                         <img src={icongrantee} alt="" /> <span>99%</span>
                       </li>
+                      <li>
+                        <img src={iconEpack} alt="" /> <span>ePack</span>
+                      </li>
                     </ul>
-                    <span className="epacket"><img src={epacket} alt="" /></span>
+                  </div>
+                </div>
+              </Col>
+              <Col xl={3} lg={4} md={6} xs={12} sm={6}>
+                <div className="product-box">
+                  <div className="top-option-wrp">
+                    <ul>
+                      <li className="like"><img src={iconEye} alt="" /></li>
+                      <li className="like"><img src={iconLike} alt="" /></li>
+                      <li className="add-wsh-list"><img src={addWhishList} alt="" /></li>
+                    </ul>
+                  </div>
+                  <div className="product-thumbnail">
+                    <figure>
+                      <img className="img-fluid" src={productimg1} alt="" />
+                    </figure>
+                  </div>
+                  <div className="product-title">
+                    <h4>iPhone Charging Dock</h4>
+                    <span className="product-price">$24</span>
+                  </div>
+                  <div className="product-bottom">
+                    <ul>
+                      <li>
+                        <img src={iconstags} alt="" /> <span>1.2K</span>
+                      </li>
+                      <li>
+                        <img src={iconrating} alt="" /> <span>4.9</span>
+                      </li>
+                      <li>
+                        <img src={icongrantee} alt="" /> <span>99%</span>
+                      </li>
+                      <li>
+                        <img src={iconEpack} alt="" /> <span>ePack</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </Col>
+              <Col xl={3} lg={4} md={6} xs={12} sm={6}>
+                <div className="product-box">
+                  <div className="top-option-wrp">
+                    <ul>
+                      <li className="like"><img src={iconEye} alt="" /></li>
+                      <li className="like"><img src={iconLike} alt="" /></li>
+                      <li className="add-wsh-list"><img src={addWhishList} alt="" /></li>
+                    </ul>
+                  </div>
+                  <div className="product-thumbnail">
+                    <figure>
+                      <img className="img-fluid" src={productimg2} alt="" />
+                    </figure>
+                  </div>
+                  <div className="product-title">
+                    <h4>Wireless Bluetooth Head</h4>
+                    <span className="product-price">$24</span>
+                  </div>
+                  <div className="product-bottom">
+                    <ul>
+                      <li>
+                        <img src={iconstags} alt="" /> <span>1.2K</span>
+                      </li>
+                      <li>
+                        <img src={iconrating} alt="" /> <span>4.9</span>
+                      </li>
+                      <li>
+                        <img src={icongrantee} alt="" /> <span>99%</span>
+                      </li>
+                      <li>
+                        <img src={iconEpack} alt="" /> <span>ePack</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </Col>
+              <Col xl={3} lg={4} md={6} xs={12} sm={6}>
+                <div className="product-box">
+                  <div className="count-tag"><img src={iconTimes} alt="" /></div>
+                  <div className="top-option-wrp">
+                    <ul>
+                      <li className="like"><img src={iconEye} alt="" /></li>
+                      <li className="like"><img src={iconLike} alt="" /></li>
+                      <li className="add-wsh-list"><img src={addWhishList} alt="" /></li>
+                    </ul>
+                  </div>
+                  <div className="product-thumbnail">
+                    <figure>
+                      <img className="img-fluid" src={productimg2} alt="" />
+                    </figure>
+                  </div>
+                  <div className="product-title">
+                    <h4>Wireless Bluetooth Head</h4>
+                    <span className="product-price">$24</span>
+                  </div>
+                  <div className="product-bottom">
+                    <ul>
+                      <li>
+                        <img src={iconstags} alt="" /> <span>1.2K</span>
+                      </li>
+                      <li>
+                        <img src={iconrating} alt="" /> <span>4.9</span>
+                      </li>
+                      <li>
+                        <img src={icongrantee} alt="" /> <span>99%</span>
+                      </li>
+                      <li>
+                        <img src={iconEpack} alt="" /> <span>ePack</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </Col>
+              <Col xl={3} lg={4} md={6} xs={12} sm={6}>
+                <div className="product-box">
+                  <div className="top-option-wrp">
+                    <ul>
+                      <li className="like"><img src={iconEye} alt="" /></li>
+                      <li className="like"><img src={iconLike} alt="" /></li>
+                      <li className="add-wsh-list"><img src={addWhishList} alt="" /></li>
+                    </ul>
+                  </div>
+                  <div className="product-thumbnail">
+                    <figure>
+                      <img className="img-fluid" src={productimg} alt="" />
+                    </figure>
+                  </div>
+                  <div className="product-title">
+                    <h4>Wireless Bluetooth Head</h4>
+                    <span className="product-price">$24</span>
+                  </div>
+                  <div className="product-bottom">
+                    <ul>
+                      <li>
+                        <img src={iconstags} alt="" /> <span>1.2K</span>
+                      </li>
+                      <li>
+                        <img src={iconrating} alt="" /> <span>4.9</span>
+                      </li>
+                      <li>
+                        <img src={icongrantee} alt="" /> <span>99%</span>
+                      </li>
+                      <li>
+                        <img src={iconEpack} alt="" /> <span>ePack</span>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </Col>
               <Col xl={3} lg={4} md={6} xs={12} sm={6}>
                 <div className="product-box lockover">
                   <div className="top-option-wrp">
-                    <div className="count-tag">1</div>
                     <ul>
+                      <li className="like"><img src={iconEye} alt="" /></li>
                       <li className="like"><img src={iconLike} alt="" /></li>
                       <li className="add-wsh-list"><img src={addWhishList} alt="" /></li>
                     </ul>
@@ -400,16 +600,18 @@ class HomeComponent extends Component {
                       <li>
                         <img src={icongrantee} alt="" /> <span>99%</span>
                       </li>
+                      <li>
+                        <img src={iconEpack} alt="" /> <span>ePack</span>
+                      </li>
                     </ul>
-                    <span className="epacket"><img src={epacket} alt="" /></span>
                   </div>
                 </div>
               </Col>
               <Col xl={3} lg={4} md={6} xs={12} sm={6}>
                 <div className="product-box lockover" onClick={this.missingLinksModal}>
                   <div className="top-option-wrp">
-                    <div className="count-tag">1</div>
                     <ul>
+                      <li className="like"><img src={iconEye} alt="" /></li>
                       <li className="like"><img src={iconLike} alt="" /></li>
                       <li className="add-wsh-list"><img src={addWhishList} alt="" /></li>
                     </ul>
@@ -434,16 +636,18 @@ class HomeComponent extends Component {
                       <li>
                         <img src={icongrantee} alt="" /> <span>99%</span>
                       </li>
+                      <li>
+                        <img src={iconEpack} alt="" /> <span>ePack</span>
+                      </li>
                     </ul>
-                    <span className="epacket"><img src={epacket} alt="" /></span>
                   </div>
                 </div>
               </Col>
               <Col xl={3} lg={4} md={6} xs={12} sm={6}>
                 <div className="product-box lockover" onClick={this.unLockProductsModal}>
                   <div className="top-option-wrp">
-                    <div className="count-tag">1</div>
                     <ul>
+                      <li className="like"><img src={iconEye} alt="" /></li>
                       <li className="like"><img src={iconLike} alt="" /></li>
                       <li className="add-wsh-list"><img src={addWhishList} alt="" /></li>
                     </ul>
@@ -468,8 +672,10 @@ class HomeComponent extends Component {
                       <li>
                         <img src={icongrantee} alt="" /> <span>99%</span>
                       </li>
+                      <li>
+                        <img src={iconEpack} alt="" /> <span>ePack</span>
+                      </li>
                     </ul>
-                    <span className="epacket"><img src={epacket} alt="" /></span>
                   </div>
                 </div>
               </Col>

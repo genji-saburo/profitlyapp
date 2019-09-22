@@ -1,16 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import Switch from "react-switch";
-import { 
-	Container, 
-	Row, 
-	Col, 
-	Button,
-	Modal, 
-	ModalBody, 
-	ModalFooter,
-	Input
-  } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
   import iconPageClose from "../styles/images/icon-payment-page-close.png";
 
 import '../styles/components/paymentComponent.css';

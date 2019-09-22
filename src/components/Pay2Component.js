@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import Switch from "react-switch";
 import { Container, Row, Col } from 'reactstrap';
 import Slider from "react-slick";
 import ReactStars from 'react-stars';
