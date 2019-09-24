@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'reactstrap';
 import ReactStars from 'react-stars';
 import '../styles/components/FooterComponent.css';
@@ -69,7 +70,7 @@ class FooterComponent extends Component {
 								</ul>
 								<Row>
 									<Col xl="9">
-										<a href="" className="btn btn-block btn-white avenir-black">Affiliates</a>
+										<Link className="btn btn-block btn-white avenir-black" to="/affiliates">Affiliates</Link>
 									</Col>
 								</Row>
 							</div>

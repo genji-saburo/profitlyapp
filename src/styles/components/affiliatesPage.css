@@ -1,0 +1,62 @@
+.become-partner{
+	position: relative;
+	padding: 100px 0 200px 0;
+	background: #0014a9; /* Old browsers */
+	background: -moz-linear-gradient(top,  #0014a9 0%, #001bf9 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #0014a9 0%,#001bf9 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #0014a9 0%,#001bf9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0014a9', endColorstr='#001bf9',GradientType=0 ); /* IE6-9 */
+}
+.section-heading h1{
+	font-size: 80px;
+	
+}
+.section-heading h2{
+	color: #9dadff;
+	font-size: 30px;
+	font-family: 'Avenir-Light';
+}
+.section-heading h2 span{
+	color: #fff;
+	font-family: 'Avenir-Medium';
+}
+.wave-shape{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+.become-partner:before{
+	content: "";
+	position: absolute;
+	bottom: 0px;
+	left: 0;
+	width: 165px;
+	height: 341px;
+	z-index: 2;
+	background-image: url("../images/affiliate-side-prod1.png");
+	background-position: center center;
+	background-repeat: no-repeat
+}
+.become-partner:after{
+	content: "";
+	position: absolute;
+	bottom: 0px;
+	right: 0;
+	width: 165px;
+	height: 341px;
+	z-index: 2;
+	background-image: url("../images/affiliate-side-prod2.png");
+	background-position: center center;
+	background-repeat: no-repeat
+}
+.features-section{
+	position: relative;
+	padding: 50px 0 200px 0;
+	background: #0018dd;
+}
+.unlimited-earning{
+	position: relative;
+	padding: 100px 0 0 0;
+	background: #0117cb;
+}
+
