@@ -56,7 +56,45 @@
 }
 .unlimited-earning{
 	position: relative;
-	padding: 100px 0 0 0;
+	padding: 30px 0 0 0;
 	background: #0117cb;
+}
+.features-wrp{
+	float: left;
+	width: 100%;
+	margin: 0 0 80px 0;
+}
+.feature-box {
+	float: left;
+	width: 20%;
+	text-align: center;
+}
+.feature-box figure{
+	margin: 0 0 10px 0;
+}
+.feature-box figure img{
+	width: 100px;
+}
+.feature-box .text{
+	color: #fff;
+	font-size: 25px;
+	font-family: 'Avenir-Roman';
+}
+.links-wrp{
+	display: block;
+	width: 100%;
+	margin: 80px 0 50px 0;
+}
+.link-box figure img{
+	width: 140px;
+}
+.link-box .text h5{
+	margin: 0;
+}
+.link-box .text h5 a{
+	color: #fff;
+}
+.link-box .text p{
+	color: #9dadff;
 }
 
