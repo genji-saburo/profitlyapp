@@ -78,6 +78,7 @@
 .feature-box .text{
 	color: #fff;
 	font-size: 25px;
+	line-height: normal;
 	font-family: 'Avenir-Roman';
 }
 .links-wrp{
@@ -90,6 +91,8 @@
 }
 .link-box .text h5{
 	margin: 0;
+	font-size: 25px;
+	font-family: 'Avenir-Black';
 }
 .link-box .text h5 a{
 	color: #fff;
