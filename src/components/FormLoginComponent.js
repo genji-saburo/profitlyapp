@@ -7,14 +7,31 @@ import ReactStars from 'react-stars';
 import '../styles/components/authComponent.css';
 import slideProducts from "../styles/images/img-products.png";
 
+import fire from "../helpers/fire";
+
 class FormSignUpComponent extends Component {
 
 	constructor(props) {
 		super(props);
-
+		fire.auth().signOut();
 		this.state = {
-
+			email : "",
+			password : "",
 		}
+	}
+
+	login = () => {
+		console.log(this.state);
+		fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((user) => {
+			console.log("success");
+			this.props.history.push("/home");
+		}).catch((error) =>{
+			console.log(error);
+		});
+		
+	}
+	handleChange = (e) =>{
+		this.setState({[e.target.name]: e.target.value});
 	}
 	render() {
 		var settings = {
@@ -54,17 +71,17 @@ class FormSignUpComponent extends Component {
 													<Col xl="12" md="12" lg="12" xs="12" sm="12">
 														<FormGroup>
 															<Label for="email">Email address:</Label>
-															<Input type="email" name="email" id="email" placeholder="johnsmith@gmail.com" />
+															<Input type="email" name="email" id="email" value={this.state.email} onChange={this.handleChange} placeholder="johnsmith@gmail.com" />
 														</FormGroup>
 													</Col>
 													<Col xl="12" md="12" lg="12" xs="12" sm="12">
 														<FormGroup>
 															<Label for="password">Password</Label>
-															<Input type="password" name="password" id="password" placeholder="Password" />
+															<Input type="password" name="password" id="password" value={this.state.password} onChange={this.handleChange} placeholder="Password" />
 														</FormGroup>
 													</Col>
 													<Col xl="12" md="12" lg="12" xs="12" sm="12" className="mt-3">
-														<Button className="btn btn-block btn-green avenir-black">Login</Button>
+														<Button className="btn btn-block btn-green avenir-black" onClick={this.login}>Login</Button>
 													</Col>
 												</Row>
 												<Row className="justify-content-center">

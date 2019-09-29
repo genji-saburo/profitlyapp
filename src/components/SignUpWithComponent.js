@@ -7,14 +7,30 @@ import ReactStars from 'react-stars';
 import '../styles/components/authComponent.css';
 import slideProducts from "../styles/images/img-products.png";
 
+import fire from '../helpers/fire';
+import firebase from 'firebase';
+
 class SignUpWithComponent extends Component {
 
 	constructor(props) {
 		super(props);
-
 		this.state = {
 
 		}
+	}
+	loginWithFacebook = () => {
+		var facebookProvider = new firebase.auth.FacebookAuthProvider();
+		fire.auth().signInWithPopup(facebookProvider)
+		.then(result => {
+			this.props.history.push("/home");
+		})
+	}
+	loginWithGoogle = () => {		
+		var googleProvider = new firebase.auth.GoogleAuthProvider();
+		fire.auth().signInWithPopup(googleProvider)
+		.then(result => {
+			this.props.history.push("/home");
+		})
 	}
 	render() {
 		var settings = {
@@ -56,13 +72,13 @@ class SignUpWithComponent extends Component {
 										</Col>
 									</Row>
 									<Row className="justify-content-center">
-										<Col xl="10" md="10" lg="10" xs="12" sm="10" className="mb-3">
-											<Link className="btn btn-block btn-facebook avenir-black" to="">Continue with Facebook</Link>
+										<Col xl="7" md="7" lg="7" xs="12" sm="7" className="mb-3">
+											<div className="btn btn-block btn-facebook avenir-black" onClick={this.loginWithFacebook}>Continue with Facebook</div>
 										</Col>
 									</Row>
 									<Row className="justify-content-center">
-										<Col xl="10" md="10" lg="10" xs="12" sm="10" className="mb-2">
-											<Link className="btn btn-block btn-google avenir-black" to="">Continue with Google</Link>
+										<Col xl="7" md="7" lg="7" xs="12" sm="7" className="mb-2">
+											<div className="btn btn-block btn-google avenir-black" onClick={this.loginWithGoogle}>Continue with Google</div>
 										</Col>
 									</Row>
 									<Row className="justify-content-center">

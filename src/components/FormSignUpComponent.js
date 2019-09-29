@@ -7,15 +7,40 @@ import ReactStars from 'react-stars';
 import '../styles/components/authComponent.css';
 import slideProducts from "../styles/images/img-products.png";
 
+import fire from "../helpers/fire";
+
 class FormSignUpComponent extends Component {
 
 	constructor(props) {
 		super(props);
 
 		this.state = {
-
+			first_name : "",
+			last_name : "",
+			email : "",
+			new_password : "",
+			confirm_password : ""
 		}
 	}
+
+	createUserWithEmail = () =>	{
+		if(this.state.email !== "" && this.state.new_password === this.state.confirm_password){
+			fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.confirm_password).then((user) => {
+				fire.auth().signInWithEmailAndPassword(this.state.email, this.state.confirm_password).then((user) => {
+					this.props.history.push("/home");
+				}).catch((error) =>{
+					console.log(error);
+				});
+			});		
+		}else{
+			console.log("error");
+		}
+	}
+
+	handleChange = (e) =>{
+		this.setState({[e.target.name]: e.target.value});
+	}
+
 	render() {
 		var settings = {
 			dots: false,
@@ -56,34 +81,34 @@ class FormSignUpComponent extends Component {
 												<Row>
 													<Col xl="6" md="6" lg="6" xs="12" sm="6">
 														<FormGroup>
-															<Input type="text" name="first_name" id="first_name" placeholder="First Name" />
+															<Input type="text" name="first_name" id="first_name"  value={this.state.first_name} onChange={this.handleChange}  placeholder="First Name" />
 														</FormGroup>
 													</Col>
 													<Col xl="6" md="6" lg="6" xs="12" sm="6">
 														<FormGroup>
-															<Input type="text" name="last_name" id="last_name" placeholder="Last Name" />
+															<Input type="text" name="last_name" id="last_name" value={this.state.last_name} onChange={this.handleChange}  placeholder="Last Name" />
 														</FormGroup>
 													</Col>
 													<Col xl="12" md="12" lg="12" xs="12" sm="12">
 														<FormGroup>
 															<Label for="email">Enter your email address:</Label>
-															<Input type="email" name="email" id="email" placeholder="johnsmith@gmail.com" />
+															<Input type="email" name="email" id="email" value={this.state.email} onChange={this.handleChange}  placeholder="johnsmith@gmail.com" />
 														</FormGroup>
 													</Col>
 													<Col xl="12" md="12" lg="12" xs="12" sm="12">
 														<FormGroup>
 															<Label for="new_password">New Password</Label>
-															<Input type="password" name="new_password" id="new_password" placeholder="New Password" />
+															<Input type="password" name="new_password" id="new_password" value={this.state.new_password} onChange={this.handleChange}  placeholder="New Password" />
 														</FormGroup>
 													</Col>
 													<Col xl="12" md="12" lg="12" xs="12" sm="12">
 														<FormGroup>
 															<Label for="confirm_password">Confirm Password</Label>
-															<Input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password" />
+															<Input type="password" name="confirm_password" id="confirm_password" value={this.state.confirm_password} onChange={this.handleChange}  placeholder="Confirm Password" />
 														</FormGroup>
 													</Col>
 													<Col xl="12" md="12" lg="12" xs="12" sm="12" className="mt-3">
-														<Button className="btn btn-block btn-green avenir-black">Submit</Button>
+														<Button className="btn btn-block btn-green avenir-black" onClick={this.createUserWithEmail}>Submit</Button>
 													</Col>
 												</Row>
 											</Col>											
