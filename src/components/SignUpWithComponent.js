@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Button } from 'reactstrap';
 import Slider from "react-slick";
 import ReactStars from 'react-stars';
 
@@ -72,13 +72,13 @@ class SignUpWithComponent extends Component {
 										</Col>
 									</Row>
 									<Row className="justify-content-center">
-										<Col xl="7" md="7" lg="7" xs="12" sm="7" className="mb-3">
-											<div className="btn btn-block btn-facebook avenir-black" onClick={this.loginWithFacebook}>Continue with Facebook</div>
+										<Col xl="10" md="10" lg="10" xs="12" sm="10" className="mb-3">
+											<Button className="btn btn-block btn-facebook avenir-black" onClick={this.loginWithFacebook}>Continue with Facebook</Button>
 										</Col>
 									</Row>
 									<Row className="justify-content-center">
-										<Col xl="7" md="7" lg="7" xs="12" sm="7" className="mb-2">
-											<div className="btn btn-block btn-google avenir-black" onClick={this.loginWithGoogle}>Continue with Google</div>
+										<Col xl="10" md="10" lg="10" xs="12" sm="10" className="mb-2">
+											<Button className="btn btn-block btn-google avenir-black" onClick={this.loginWithGoogle}>Continue with Google</Button>
 										</Col>
 									</Row>
 									<Row className="justify-content-center">

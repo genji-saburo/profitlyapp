@@ -96,6 +96,9 @@
 	color: #5f72ff !important;
 	overflow: hidden;
 }
+.navigation .nav-link:hover .profile-img{
+	border-color: #fff;
+}
 .navigation .nav-link.home{
 	width: 36px;
 	height: 36px;
@@ -133,6 +136,10 @@
 	transform: translateY(-50%);
 	position: absolute;
 }
+.navigation .nav-link.dropdown-toggle:hover:after{
+	border-top: .3em solid #fff;
+}
+
 .navigation .navbar{
 	padding: 0;
 }
